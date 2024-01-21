@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: PiAuthorizationService
+
+server:
+  port: 8080
+
+security:
+  oauth2:
+    tokenTimeout:
+      token: 50000
+      refreshToken: 60000
+    client:
+      client-id: "wevioo"
+      client-secret: "{noop}wevioo@@2024"
+
+feign:
+  client:
+      apis:
+        piApiService: "http://192.168.34.137:7001/pi-api"
+
+
+
+

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dossierInvestissement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7130b586-3904-4f4d-9279-875b7a2f61f6">
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#E1E1E1">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="&lt;br&gt;" mode="Opaque" forecolor="#000000" pattern="">
+		<box>
+			<pen lineWidth="0.5"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="835560ec-83d2-482a-ab46-77c9f9f82724">
+		<parameter name="sections" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="sectionTitle" class="java.lang.String"/>
+		<field name="docLabel" class="java.lang.String"/>
+		<group name="Group1">
+			<groupExpression><![CDATA[$F{sectionTitle}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="sections" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="documents" class="java.lang.String"/>
+	<parameter name="title" class="java.lang.String"/>
+	<group name="Group1"/>
+	<detail>
+		<band height="802">
+			<frame>
+				<reportElement x="0" y="30" width="550" height="760" uuid="5a689588-f07f-445c-ae85-aaa40d8ae7ea"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#7D7878"/>
+				</box>
+				<componentElement>
+					<reportElement stretchType="ContainerHeight" x="10" y="207" width="525" height="68" uuid="d16ddf46-da55-4e32-8165-57cb3c04d2e9">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+						<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+						<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+						<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="Dataset1" uuid="a6e015e4-0e97-4a70-b0e7-98cbb4d5be25">
+							<dataSourceExpression><![CDATA[$P{sections}]]></dataSourceExpression>
+						</datasetRun>
+						<jr:column width="525" uuid="b420aaae-eacb-4dcd-adbe-eb36f7f5153c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne1"/>
+							<jr:groupHeader groupName="Group1">
+								<jr:cell style="Table_CH" height="30" rowSpan="1">
+									<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+										<reportElement x="0" y="0" width="460" height="30" uuid="3de03bb1-3849-4700-bc17-0d60c91cc30b">
+											<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+										</reportElement>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+											<paragraph leftIndent="2"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{sectionTitle}]]></textFieldExpression>
+									</textField>
+								</jr:cell>
+							</jr:groupHeader>
+							<jr:detailCell style="Table_TD" height="40">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement x="0" y="0" width="525" height="40" uuid="cbdcdf62-53d4-419e-9ec4-bb83788e4d29">
+										<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+										<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+										<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+										<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+									</reportElement>
+									<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+										<pen lineWidth="0.0" lineStyle="Solid"/>
+									</box>
+									<textElement verticalAlignment="Middle" markup="html">
+										<font fontName="DejaVu Sans" size="12"/>
+										<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="2" leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{docLabel}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+				<textField>
+					<reportElement x="10" y="176" width="525" height="30" uuid="fea12933-87fb-42d8-be51-41e07960b885">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="12"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{documents}]]></textFieldExpression>
+				</textField>
+				<image scaleImage="FillFrame">
+					<reportElement x="209" y="31" width="140" height="80" uuid="15298637-6974-4fb2-8081-677c7b54b3ad"/>
+					<graphicElement fill="Solid"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+				<textField isBlankWhenNull="true">
+					<reportElement x="144" y="119" width="270" height="40" uuid="b0cf86ed-5a7c-4e2c-98d5-5aff6bf70e54"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="16"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>
