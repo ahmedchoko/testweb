@@ -39,5 +39,5 @@ stage("Deploy to WebLogic") {
         }
     }
 }
-
+}
 }
