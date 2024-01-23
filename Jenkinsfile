@@ -1,21 +1,20 @@
 pipeline {
-
-agent any
- tools {
+    agent any
+    tools {
         maven 'M2_HOME'
     }
-stages {
-stage("Build") {
-steps {
-sh " mvn clean install "
-}
-}
-stage("Unit tests") {
-steps {
-sh " mvn test"
-
-}}
- stage("Deploy to WebLogic") {
+    stages {
+        stage("Build") {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+        stage("Unit tests") {
+            steps {
+                sh "mvn test"
+            }
+        }
+        stage("Deploy to WebLogic") {
             steps {
                 script {
                     // Use weblogic.Deployer to deploy the JAR
@@ -25,11 +24,10 @@ sh " mvn test"
                         deploy('pi-api', '/var/lib/jenkins/workspace/lol/pi-api/target/pi-api.war', targets='Déploiements', upload='true')
                         startApplication('pi-api')
                         exit()
-                        EOF
+EOF
                     """
                 }
             }
         }
-
-}
+    }
 }
