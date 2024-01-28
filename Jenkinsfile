@@ -4,7 +4,7 @@ pipeline {
         maven 'M2_HOME'
     }
      environment {
-        WLS_HOME = '/home/vagrant/oracle/wlserver'
+        WLS_HOME = '/home/vagrant/oracle1/wlserver'
     }
     stages {
         stage("Build") {
@@ -22,7 +22,7 @@ stage("Debugging") {
     steps {
         script {
             // Run a simple command to check permissions
-            sh "ls -l /home/vagrant/oracle/wlserver/common/bin/wlst.sh"
+            sh "ls -l /home/vagrant/oracle1/wlserver/common/bin/wlst.sh"
         }
     }
 }
